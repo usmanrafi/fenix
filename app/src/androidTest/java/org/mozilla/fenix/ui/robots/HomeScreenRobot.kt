@@ -10,7 +10,6 @@ import android.net.Uri
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
@@ -165,7 +164,8 @@ private fun navigationToolbar() =
     onView(CoreMatchers.allOf(ViewMatchers.withText("Search or enter address")))
 
 private fun assertNavigationToolbar() =
-    onView(CoreMatchers.allOf(ViewMatchers.withText("Search or enter address")))
+//    onView(CoreMatchers.allOf(ViewMatchers.withText("Search or enter address")))
+    navigationToolbar()
         .check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
 
 private fun assertHomeScreen() {

@@ -5,8 +5,6 @@ import androidx.fragment.app.testing.launchFragment
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import assertk.assertThat
 import assertk.assertions.isNotNull
-import assertk.assertions.isNull
-import assertk.assertions.isTrue
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 import org.junit.Before
 import org.junit.Test
@@ -35,17 +33,5 @@ class CreateCollectionFragmentTest {
     fun `fragment is recreating`() {
         scenario.recreate()
         assertThat(scenario).isNotNull()
-    }
-
-    @Test
-    fun `creation dialog shows and can be dismissed`() {
-        with(scenario) {
-            onFragment { fragment ->
-                assertThat(fragment.dialog).isNotNull()
-                assertThat(fragment.requireDialog().isShowing).isTrue()
-                fragment.dismiss()
-                assertThat(fragment.dialog).isNull()
-            }
-        }
     }
 }
